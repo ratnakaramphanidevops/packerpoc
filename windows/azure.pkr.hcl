@@ -1,8 +1,8 @@
 source "azure-arm" "vm" {
- 
-  client_id       = var.client_id
-  subscription_id = var.subscription_id
-  tenant_id       = var.tenant_id
+ OIDC =true
+#   client_id       = var.client_id
+#   subscription_id = var.subscription_id
+#   tenant_id       = var.tenant_id
   
   location                          = "Southeast Asia"
   managed_image_name                = "aztf-w2022v2"
