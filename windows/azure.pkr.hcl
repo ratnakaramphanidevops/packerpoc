@@ -31,4 +31,8 @@ source "azure-arm" "vm" {
 
   #allowed_inbound_ip_addresses      = [var.my_ip_address]
 
+ managed_identity {
+    client_id = "63b12b55-67c8-49f1-8509-f9ca1be2808c"
+ }
+
 }
