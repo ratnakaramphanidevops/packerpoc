@@ -4,7 +4,6 @@ packer {
     azure = {
       version = ">= 2.1.8"
       source  = "github.com/hashicorp/azure"
-      use_oidc = true
     }
   }
 }
