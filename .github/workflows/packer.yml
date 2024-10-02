@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ROOT_PATH : '${{github.workspace}}/windows'
 
     permissions:
       id-token: write
@@ -29,6 +31,7 @@ jobs:
        # federated-credential: ${{ secrets.AZURE_FEDERATED_CREDENTIAL }}
 
     - name: Build Packer image
+      working-directory: ${{env.ROOT_PATH}}
       run: |
         packer init .
         packer build .
