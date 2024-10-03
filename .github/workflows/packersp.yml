@@ -24,6 +24,7 @@ jobs:
        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Build Packer image
+      working-directory: ${{env.ROOT_PATH}}
       run: |
         packer init .
         packer build .
