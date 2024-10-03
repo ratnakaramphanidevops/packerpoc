@@ -27,8 +27,8 @@ jobs:
       working-directory: ${{env.ROOT_PATH}}
       run: |
         packer init .
-        packer build azure.pkr.hcl .
-        # packer build -var "client_id=${{ secrets.AZURE_CLIENT_ID }}" \
-        #              -var "client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" \
-        #              -var "tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
-        #              -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" .
+        #packer build azure.pkr.hcl .
+        packer build -var "client_id=${{ secrets.AZURE_CLIENT_ID }}" \
+                     -var "client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" \
+                     -var "tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
+                     -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" azure.pkr.hcl .
