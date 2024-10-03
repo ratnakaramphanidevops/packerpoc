@@ -31,4 +31,4 @@ jobs:
         packer build -var "client_id=${{ secrets.AZURE_CLIENT_ID }}" \
                      -var "client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" \
                      -var "tenant_id=${{ secrets.AZURE_TENANT_ID }}" \
-                     -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" azure.pkr.hcl .
+                     -var "subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" \ -var-file=azure.pkr.hcl .
