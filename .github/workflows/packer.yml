@@ -11,9 +11,9 @@ jobs:
     env:
       ROOT_PATH : '${{github.workspace}}/windows'
 
-    # permissions:
-    #   id-token: write
-    #   contents: read
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
     - name: Checkout repository
@@ -22,7 +22,7 @@ jobs:
     - name: Set up Packer
       uses: hashicorp/setup-packer@v2
 
-    - name: Authenticate to Azure using OIDC
+    - name: Authenticate to Azure 
       uses: azure/login@v1
       with:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
